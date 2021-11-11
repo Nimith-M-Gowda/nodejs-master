@@ -1,19 +1,19 @@
 {
     "dependencies": {
-      "cors": "^2.8.5",
-      "express": "^4.17.1",
-      "react-scripts": "^4.0.3"
-
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "fs": "^0.0.1-security",
+        "react-scripts": "^4.0.3"
     },
     "devDependencies": {
-      "@babel/core": "^7.1.2",
-      "@babel/node": "^7.0.0",
-      "@babel/preset-env": "^7.1.0",
-      "eslint": "^8.1.0",
-      "nodemon": "^2.0.14",
-      "prettier": "^2.4.1"
+        "@babel/core": "^7.1.2",
+        "@babel/node": "^7.0.0",
+        "@babel/preset-env": "^7.1.0",
+        "eslint": "^8.1.0",
+        "nodemon": "^2.0.14",
+        "prettier": "^2.4.1"
     },
     "scripts": {
-      "start": "nodemon --exec babel-node index.js"
+        "start": "nodemon --exec babel-node index.js"
     }
-  }
+}
