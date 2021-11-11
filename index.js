@@ -82,6 +82,34 @@ app.patch('/api/v1/tours/:id', async (req, res) => {
   );
 });
 
+app.delete('/api/v1/tours/:id', (req, res) => {
+  const tourindex = tours.findIndex(({ id }) => id === req.params.id * 1);
+  console.log(
+    '🚀 ~ file: index.js ~ line 87 ~ app.delete ~ tourindex',
+    tourindex
+  );
+
+  const deletedtour = tours.splice(tourindex, 1);
+
+  if (tourindex == -1) {
+    return res.status(404).json({
+      status: 'fail',
+      data: 'invalid',
+    });
+  }
+
+  fs.writeFile(
+    `${__dirname}/dev-data/data/tours-sample.json`,
+    JSON.stringify(tours),
+    (err) => {
+      return res.status(201).json({
+        status: 'success',
+        data: null,
+      });
+    }
+  );
+});
+
 const port = '8000';
 
 app.listen(port, () => {
